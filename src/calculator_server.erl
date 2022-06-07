@@ -45,7 +45,7 @@ multiply(_Parsed_body, Soap_req, State) ->
 divide(_Parsed_body, Soap_req, State) ->
     Result = 
         #'P0:DivideResponse'{
-            'DivideResult' = _Parsed_body#'P0:Divide'.intA / _Parsed_body#'P0:Divide'.intB},
+            'DivideResult' = _Parsed_body#'P0:Divide'.intA div _Parsed_body#'P0:Divide'.intB},
     {ok, Result, Soap_req, State}.
 
 %% The 'interface()' function is used by the SOAP framework to access information about
