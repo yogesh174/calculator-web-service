@@ -4,35 +4,35 @@
 -include("calculator.hrl").
 
 
-add() -> 
+add(X, Y) -> 
     calculator_client_stub:add(
         #'P0:Add'{
-            intA = 42,
-            intB = 42},
+            intA = X,
+            intB = Y},
     _Soap_headers = [],
     _Soap_options = [{url,"http://localhost:8080"}]).
 
-subtract() -> 
+subtract(X, Y) -> 
     calculator_client_stub:subtract(
         #'P0:Subtract'{
-            intA = 42,
-            intB = 42},
+            intA = X,
+            intB = Y},
     _Soap_headers = [],
     _Soap_options = [{url,"http://localhost:8080"}]).
 
-multiply() -> 
+multiply(X, Y) -> 
     calculator_client_stub:multiply(
         #'P0:Multiply'{
-            intA = 42,
-            intB = 42},
+            intA = X,
+            intB = Y},
     _Soap_headers = [],
     _Soap_options = [{url,"http://localhost:8080"}]).
 
-divide() -> 
+divide(X, Y) -> 
     calculator_client_stub:divide(
         #'P0:Divide'{
-            intA = 42,
-            intB = 42},
+            intA = X,
+            intB = Y},
     _Soap_headers = [],
     _Soap_options = [{url,"http://localhost:8080"}]).
 

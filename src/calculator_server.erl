@@ -27,7 +27,7 @@ add(_Parsed_body, Soap_req, State) ->
 subtract(_Parsed_body, Soap_req, State) ->
     Result = 
         #'P0:SubtractResponse'{
-            'SubtractResult' = 42},
+            'SubtractResult' = _Parsed_body#'P0:Subtract'.intA - _Parsed_body#'P0:Subtract'.intB},
     {ok, Result, Soap_req, State}.
 
 -spec multiply(Parsed_body::'P0:Multiply'(),
@@ -36,7 +36,7 @@ subtract(_Parsed_body, Soap_req, State) ->
 multiply(_Parsed_body, Soap_req, State) ->
     Result = 
         #'P0:MultiplyResponse'{
-            'MultiplyResult' = 42},
+            'MultiplyResult' = _Parsed_body#'P0:Multiply'.intA * _Parsed_body#'P0:Multiply'.intB},
     {ok, Result, Soap_req, State}.
 
 -spec divide(Parsed_body::'P0:Divide'(),
@@ -45,7 +45,7 @@ multiply(_Parsed_body, Soap_req, State) ->
 divide(_Parsed_body, Soap_req, State) ->
     Result = 
         #'P0:DivideResponse'{
-            'DivideResult' = 42},
+            'DivideResult' = _Parsed_body#'P0:Divide'.intA / _Parsed_body#'P0:Divide'.intB},
     {ok, Result, Soap_req, State}.
 
 %% The 'interface()' function is used by the SOAP framework to access information about
